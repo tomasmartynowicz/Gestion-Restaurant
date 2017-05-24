@@ -10,7 +10,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     
     <!-- Custom styles for this template -->
-    <link href="css/jumbotron.css" rel="stylesheet">
+    <link href="css/personal.css" rel="stylesheet">
     
 </head>
 <body>
