@@ -11,8 +11,7 @@
           </button>
           <a class="pull-left" href="#"><IMG src="/GestionRestaurant/imagenes/LogoUnla1.png"></a>
         </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <form class="navbar-form navbar-right">
+        <div id="navbar" class="navbar-collapse collapse navbar-right">
             <h1>Orientación a objetos II</h1>
         </div><!--/.navbar-collapse -->
       </div>
