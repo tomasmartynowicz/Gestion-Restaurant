@@ -1,0 +1,17 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+	<class name="datos.CuentaCorriente" table="cuentaCorriente">
+		<id column="idCuentaCorriente" name="idCuentaCorriente">
+			<generator class="identity" />
+		</id>
+		<property column="descripcion" name="descripcion" type="string"/>
+		<property column="fechaAlta" name="fechaAlta" type="calendar"/>
+		<property column="baja" name="baja" type="boolean"/>
+		<property column="total" name="total" type="double"/>
+		<set name="lstCliente" table="cliente" order-by="idCliente asc" inverse="true" fetch="select" lazy="true">
+			<key column="idCuentaCorriente" />
+			<one-to-many class="datos.Cliente" />
+		</set>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,22 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+	<class name="datos.Mesa" table="mesa">
+		<id column="idMesa" name="idMesa">
+			<generator class="identity" />
+		</id>
+		<property column="nroMesa" name="nroMesa" type="int"/>
+		<property column="capacidad" name="capacidad" type="int"/>
+		<property column="salon" name="salon" type="int"/>
+		<property column="union" name="union" type="int"/>
+		<property column="estado" name="estado" type="int"/>
+		<set name="lstComanda" table="comanda" order-by="idComanda" inverse="true" lazy="true" fetch="select">
+			<key column="idMesa" not-null="true"/>
+			<one-to-many class="datos.Comanda"/>
+		</set>
+		<set name="lstReporteMesa" table="reporteMesa" order-by="idReporteMesa" inverse="true" lazy="true" fetch="select">
+			<key column="idMesa" not-null="true"/>
+			<one-to-many class="datos.ReporteMesa"/>
+		</set>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,25 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+	<class name="datos.Producto" table="producto">
+		<id column="idProducto" name="idProducto">
+			<generator class="identity" />
+		</id>
+		<property column="nombre" name="nombre" type="string"/>
+		<property column="descripcion" name="descripcion" type="string"/>
+		<property column="baja" name="baja" type="boolean"/>
+		<set name="lstComponente" table="componente" order-by="idComponente" inverse="true" lazy="true" fetch="select">
+			<key column="idProducto" not-null="true"/>
+			<one-to-many class="datos.Componente"/>
+		</set>
+		<set name="lstPrecioProductoLista" table="precioProductoLista" order-by="idPrecioProductoLista" inverse="true" lazy="true" fetch="select">
+			<key column="idProducto" not-null="true"/>
+			<one-to-many class="datos.PrecioProductoLista"/>
+		</set>
+		<many-to-one name="rubro" class="datos.Rubro" column="idRubro" not-null="true"/>
+		<set name="lstSubrubro" table="productoxsubrubro" outer-join="true">
+			<key column="idProducto"/>
+			<many-to-many column="idSubrubro" class="datos.Subrubro"/>
+		</set>
+	</class>
+</hibernate-mapping>

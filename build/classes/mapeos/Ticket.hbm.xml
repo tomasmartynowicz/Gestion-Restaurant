@@ -1,0 +1,15 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+	<class name="datos.Ticket" table="ticket">
+		<id column="idTicket" name="idTicket">
+			<generator class="identity" />
+		</id>
+		<property column="cortesia" name="cortesia" type="boolean"/>
+		<property column="estado" name="estado" type="int"/>
+		<property column="fechaYHora" name="fechaYHora" type="calendar"/>
+		<many-to-one name="cliente" class="datos.Cliente" column="idCliente" not-null="true"/>
+		<many-to-one name="mesa" class="datos.Mesa" column="idMesa" not-null="true"/>
+		<many-to-one name="empleado" class="datos.Empleado" column="idEmpleado" not-null="true"/>
+	</class>
+</hibernate-mapping>

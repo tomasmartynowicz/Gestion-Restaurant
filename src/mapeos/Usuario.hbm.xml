@@ -1,0 +1,13 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+	<class name="datos.Usuario" table="usuario">
+		<id column="idUsuario" name="idUsuario">
+			<generator class="identity" />
+		</id>
+		<property column="nombreUsuario" name="nombreUsuario" type="string"/>
+		<property column="clave" name="clave" type="string"/>
+		
+		<one-to-one name="empleado" class="datos.Empleado"></one-to-one>
+	</class>
+</hibernate-mapping>
