@@ -5,7 +5,7 @@ import java.util.Set;
 public class Vianda {
 
 	
-	private int idVianda;
+	private long idVianda;
 	private String nombre;
 	private Set<Producto>lstProducto;
 	
@@ -20,12 +20,12 @@ public class Vianda {
 	}
 
 
-	public int getIdVianda() {
+	public long getIdVianda() {
 		return idVianda;
 	}
 
 
-	protected void setIdVianda(int idVianda) {
+	protected void setIdVianda(long idVianda) {
 		this.idVianda = idVianda;
 	}
 
@@ -53,36 +53,6 @@ public class Vianda {
 	@Override
 	public String toString() {
 		return "Vianda [idVianda=" + idVianda + ", nombre=" + nombre + "]";
-	}
-
-
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + idVianda;
-		result = prime * result + ((nombre == null) ? 0 : nombre.hashCode());
-		return result;
-	}
-
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Vianda other = (Vianda) obj;
-		if (idVianda != other.idVianda)
-			return false;
-		if (nombre == null) {
-			if (other.nombre != null)
-				return false;
-		} else if (!nombre.equals(other.nombre))
-			return false;
-		return true;
 	}
 	
 	

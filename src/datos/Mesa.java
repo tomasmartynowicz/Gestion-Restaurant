@@ -3,12 +3,13 @@ package datos;
 import java.util.Set;
 
 public class Mesa {
-	private int idMesa;
+	
+	private long idMesa;
 	private int nroMesa;
 	private int capacidad;
 	private int salon;
 	private int union;
-	private char estado;
+	private int estado;
 	private Set<Comanda> lstComanda;
 	private Set<ReporteMesa>lstReporteMesa;
 	
@@ -26,12 +27,12 @@ public class Mesa {
 	}
 
 
-	public int getIdMesa() {
+	public long getIdMesa() {
 		return idMesa;
 	}
 
 
-	protected void setIdMesa(int idMesa) {
+	protected void setIdMesa(long idMesa) {
 		this.idMesa = idMesa;
 	}
 
@@ -76,12 +77,12 @@ public class Mesa {
 	}
 
 
-	public char getEstado() {
+	public int getEstado() {
 		return estado;
 	}
 
 
-	public void setEstado(char estado) {
+	public void setEstado(int estado) {
 		this.estado = estado;
 	}
 
@@ -112,37 +113,9 @@ public class Mesa {
 				+ ", union=" + union + ", estado=" + estado + "]";
 	}
 	
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + capacidad;
-		result = prime * result + idMesa;
-		result = prime * result + nroMesa;
-		result = prime * result + salon;
-		return result;
-	}
-
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Mesa other = (Mesa) obj;
-		if (capacidad != other.capacidad)
-			return false;
-		if (idMesa != other.idMesa)
-			return false;
-		if (nroMesa != other.nroMesa)
-			return false;
-		if (salon != other.salon)
-			return false;
-		return true;
-	}	
+	
+	
+	
 	
 
 }

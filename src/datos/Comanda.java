@@ -6,7 +6,7 @@ import java.util.Set;
 public class Comanda {
 
 	
-	private int idComanda;
+	private long idComanda;
 	private Empleado empleado;
 	private Cliente cliente;
 	private int estado;
@@ -28,12 +28,12 @@ public class Comanda {
 	}
 
 
-	public int getIdComanda() {
+	public long getIdComanda() {
 		return idComanda;
 	}
 
 
-	protected void setIdComanda(int idComanda) {
+	protected void setIdComanda(long idComanda) {
 		this.idComanda = idComanda;
 	}
 
@@ -102,30 +102,6 @@ public class Comanda {
 	public String toString() {
 		return "Comanda [idComanda=" + idComanda + ", empleado=" + empleado + ", cliente=" + cliente + ", estado="
 				+ estado + ", fechaYHora=" + fechaYHora + ", mesa=" + mesa + "]";
-	}
-
-
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + idComanda;
-		return result;
-	}
-
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Comanda other = (Comanda) obj;
-		if (idComanda != other.idComanda)
-			return false;
-		return true;
 	}
 	
 	

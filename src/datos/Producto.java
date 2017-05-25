@@ -4,11 +4,11 @@ import java.util.Set;
 
 public class Producto {
 	
-	private int idProducto;
+	private long idProducto;
 	private String nombre;
 	private String descripcion;
 	private boolean baja;
-	private Set<Componente> lstComponentes;
+	private Set<Componente> lstComponente;
 	private Set<PrecioProductoLista> lstPrecioProductoLista;
 	private Rubro rubro;
 	private Set<Subrubro> lstSubrubro;
@@ -23,11 +23,11 @@ public class Producto {
 		this.rubro = rubro;
 	}
 
-	public int getIdProducto() {
+	public long getIdProducto() {
 		return idProducto;
 	}
 
-	protected void setIdProducto(int idProducto) {
+	protected void setIdProducto(long idProducto) {
 		this.idProducto = idProducto;
 	}
 
@@ -55,12 +55,12 @@ public class Producto {
 		this.baja = baja;
 	}
 
-	public Set<Componente> getLstComponentes() {
-		return lstComponentes;
+	public Set<Componente> getLstComponente() {
+		return lstComponente;
 	}
 
-	public void setLstComponentes(Set<Componente> lstComponentes) {
-		this.lstComponentes = lstComponentes;
+	public void setLstComponente(Set<Componente> lstComponente) {
+		this.lstComponente = lstComponente;
 	}
 
 	public Set<PrecioProductoLista> getLstPrecioProductoLista() {
@@ -92,34 +92,10 @@ public class Producto {
 		return "Producto [idProducto=" + idProducto + ", nombre=" + nombre + ", descripcion=" + descripcion + ", baja="
 				+ baja + ", rubro=" + rubro + "]";
 	}
-
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + idProducto;
-		result = prime * result + ((nombre == null) ? 0 : nombre.hashCode());
-		return result;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Producto other = (Producto) obj;
-		if (idProducto != other.idProducto)
-			return false;
-		if (nombre == null) {
-			if (other.nombre != null)
-				return false;
-		} else if (!nombre.equals(other.nombre))
-			return false;
-		return true;
-	}
 	
 	
+	
+	
+	
+
 }

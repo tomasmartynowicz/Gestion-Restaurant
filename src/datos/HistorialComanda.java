@@ -5,7 +5,7 @@ import java.util.Set;
 
 public class HistorialComanda {
 	
-	private int idHistorialComanda;
+	private long idHistorialComanda;
 	private Empleado empleado;
 	private GregorianCalendar fechaYHora;
 	private Mesa mesa;
@@ -19,9 +19,8 @@ public class HistorialComanda {
 
 
 
-	public HistorialComanda(int idHistorialComanda, Empleado empleado, GregorianCalendar fechaYHora, Mesa mesa,
+	public HistorialComanda( Empleado empleado, GregorianCalendar fechaYHora, Mesa mesa,
 			Ticket ticket) {
-		this.idHistorialComanda = idHistorialComanda;
 		this.empleado = empleado;
 		this.fechaYHora = fechaYHora;
 		this.mesa = mesa;
@@ -30,13 +29,13 @@ public class HistorialComanda {
 
 
 
-	public int getIdHistorialComanda() {
+	public long getIdHistorialComanda() {
 		return idHistorialComanda;
 	}
 
 
 
-	public void setIdHistorialComanda(int idHistorialComanda) {
+	protected void setIdHistorialComanda(long idHistorialComanda) {
 		this.idHistorialComanda = idHistorialComanda;
 	}
 
@@ -106,32 +105,6 @@ public class HistorialComanda {
 	public String toString() {
 		return "HistorialComanda [idHistorialComanda=" + idHistorialComanda + ", empleado=" + empleado + ", fechaYHora="
 				+ fechaYHora + ", mesa=" + mesa + ", ticket=" + ticket + "]";
-	}
-
-
-
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + idHistorialComanda;
-		return result;
-	}
-
-
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		HistorialComanda other = (HistorialComanda) obj;
-		if (idHistorialComanda != other.idHistorialComanda)
-			return false;
-		return true;
 	}
 	
 	

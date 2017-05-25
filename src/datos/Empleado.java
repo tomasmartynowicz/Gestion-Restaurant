@@ -2,11 +2,10 @@ package datos;
 
 public class Empleado {
 	
-	private int idEmpleado;
+	private long idEmpleado;
 	private String tipoEmpleado;
 	private String nombre;
 	private String apellido;
-	private Usuario usuario;
 	
 	
 	
@@ -19,18 +18,17 @@ public class Empleado {
 		this.tipoEmpleado = tipoEmpleado;
 		this.nombre = nombre;
 		this.apellido = apellido;
-		this.usuario = usuario;
 	}
 
 
 
-	public int getIdEmpleado() {
+	public long getIdEmpleado() {
 		return idEmpleado;
 	}
 
 
 
-	protected void setIdEmpleado(int idEmpleado) {
+	protected void setIdEmpleado(long idEmpleado) {
 		this.idEmpleado = idEmpleado;
 	}
 
@@ -72,59 +70,12 @@ public class Empleado {
 
 
 
-	public Usuario getUsuario() {
-		return usuario;
-	}
-
-
-
-	public void setUsuario(Usuario usuario) {
-		this.usuario = usuario;
-	}
-
-
-
 	@Override
 	public String toString() {
-		return "Empleado [idEmpleado=" + idEmpleado + ", tipoEmpleado=" + tipoEmpleado + ", nombre=" + nombre
-				+ ", apellido=" + apellido + ", usuario=" + usuario + "]";
+		return "Empleado [idEmpleado=" + idEmpleado + ", tipoEmpleado="
+				+ tipoEmpleado + ", nombre=" + nombre + ", apellido="
+				+ apellido + "]";
 	}
-
-
-
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + idEmpleado;
-		result = prime * result + ((usuario == null) ? 0 : usuario.hashCode());
-		return result;
-	}
-
-
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Empleado other = (Empleado) obj;
-		if (idEmpleado != other.idEmpleado)
-			return false;
-		if (usuario == null) {
-			if (other.usuario != null)
-				return false;
-		} else if (!usuario.equals(other.usuario))
-			return false;
-		return true;
-	}
-	
-	
-	
-
 	
 	
 }

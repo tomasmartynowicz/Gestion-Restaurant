@@ -2,11 +2,13 @@ package datos;
 
 public class Cliente {
 	
-	private int idCliente;
+	private long idCliente;
 	private TipoCliente tipoCliente;
 	private int dni;  
 	private int habitacion;
 	private CuentaCorriente cuentaCorriente;
+	
+	
 	
 	public Cliente() {
 	}
@@ -20,12 +22,12 @@ public class Cliente {
 	}
 
 
-	public int getIdCliente() {
+	public long getIdCliente() {
 		return idCliente;
 	}
 
 
-	protected void setIdCliente(int idCliente) {
+	protected void setIdCliente(long idCliente) {
 		this.idCliente = idCliente;
 	}
 
@@ -72,38 +74,10 @@ public class Cliente {
 
 	@Override
 	public String toString() {
-		return "Cliente [idCliente=" + idCliente + ", tipoCliente=" + tipoCliente + ", dni=" + dni + ", habitacion="
-				+ habitacion + ", cuentaCorriente=" + cuentaCorriente + "]";
+		return "Cliente [idCliente=" + idCliente + ", tipoCliente="
+				+ tipoCliente + ", dni=" + dni + ", habitacion=" + habitacion
+				+ "]";
 	}
-
-
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + dni;
-		result = prime * result + idCliente;
-		return result;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Cliente other = (Cliente) obj;
-		if (dni != other.dni)
-			return false;
-		if (idCliente != other.idCliente)
-			return false;
-		return true;
-	}
-	
-	
-	
 	
 	
 	

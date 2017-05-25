@@ -5,7 +5,7 @@ import java.util.Set;
 
 public class ListaPrecio {
 	
-	private int idListaPrecio;
+	private long idListaPrecio;
 	private String descripcion;
 	private TipoCliente tipoCliente;
 	private boolean baja;
@@ -29,13 +29,13 @@ public class ListaPrecio {
 
 
 
-	public int getIdListaPrecio() {
+	public long getIdListaPrecio() {
 		return idListaPrecio;
 	}
 
 
 
-	protected void setIdListaPrecio(int idListaPrecio) {
+	protected void setIdListaPrecio(long idListaPrecio) {
 		this.idListaPrecio = idListaPrecio;
 	}
 
@@ -97,38 +97,6 @@ public class ListaPrecio {
 
 	public void setLstPrecioProductoLista(Set<PrecioProductoLista> lstPrecioProductoLista) {
 		this.lstPrecioProductoLista = lstPrecioProductoLista;
-	}
-
-
-
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + idListaPrecio;
-		result = prime * result + ((tipoCliente == null) ? 0 : tipoCliente.hashCode());
-		return result;
-	}
-
-
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		ListaPrecio other = (ListaPrecio) obj;
-		if (idListaPrecio != other.idListaPrecio)
-			return false;
-		if (tipoCliente == null) {
-			if (other.tipoCliente != null)
-				return false;
-		} else if (!tipoCliente.equals(other.tipoCliente))
-			return false;
-		return true;
 	}
 	
 

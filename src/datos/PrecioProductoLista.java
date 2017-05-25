@@ -4,7 +4,7 @@ import java.util.Set;
 
 public class PrecioProductoLista {
 
-	
+	private long idPrecioProductoLista;
 	private Producto producto;
 	private Set<ListaPrecio> listaPrecio;
 	private double precio;
@@ -54,6 +54,16 @@ public class PrecioProductoLista {
 	@Override
 	public String toString() {
 		return "PrecioProductoLista [listaPrecio=" + listaPrecio + ", precio=" + precio + "]";
+	}
+
+
+	public long getIdPrecioProductoLista() {
+		return idPrecioProductoLista;
+	}
+
+
+	public void setIdPrecioProductoLista(long idPrecioProductoLista) {
+		this.idPrecioProductoLista = idPrecioProductoLista;
 	}
 	
 	

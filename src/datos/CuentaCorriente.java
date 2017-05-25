@@ -5,16 +5,31 @@ import java.util.Set;
 
 public class CuentaCorriente {
 	
-	private int idCuentaCorriente;
+	private long idCuentaCorriente;
 	private String descripcion;
 	private GregorianCalendar fechaAlta;
 	private boolean baja;
-	private Set<Cliente> lstClientes;
+	private Set<Cliente> lstCliente;
+	private double total;
 	
 	
+	
+	
+	
+	public double getTotal() {
+		return total;
+	}
+
+
+	public void setTotal(double total) {
+		this.total = total;
+	}
+
+
 	public CuentaCorriente() {
 	}
-	
+
+
 	public CuentaCorriente( String descripcion, GregorianCalendar fechaAlta, boolean baja) {
 		this.descripcion = descripcion;
 		this.fechaAlta = fechaAlta;
@@ -22,12 +37,12 @@ public class CuentaCorriente {
 	}
 
 
-	public int getIdCuentaCorriente() {
+	public long getIdCuentaCorriente() {
 		return idCuentaCorriente;
 	}
 
 
-	protected void setIdCuentaCorriente(int idCuentaCorriente) {
+	protected void setIdCuentaCorriente(long idCuentaCorriente) {
 		this.idCuentaCorriente = idCuentaCorriente;
 	}
 
@@ -62,46 +77,24 @@ public class CuentaCorriente {
 	}
 
 
-	public Set<Cliente> getLstClientes() {
-		return lstClientes;
+	public Set<Cliente> getLstCliente() {
+		return lstCliente;
 	}
 
 
-	public void setLstClientes(Set<Cliente> lstClientes) {
-		this.lstClientes = lstClientes;
+	public void setLstCliente(Set<Cliente> lstCliente) {
+		this.lstCliente = lstCliente;
 	}
 
 
 	@Override
 	public String toString() {
-		return "CuentaCorriente [idCuentaCorriente=" + idCuentaCorriente + ", descripcion=" + descripcion
-				+ ", fechaAlta=" + fechaAlta + ", baja=" + baja + "]";
+		return "CuentaCorriente [idCuentaCorriente=" + idCuentaCorriente
+				+ ", descripcion=" + descripcion + ", fechaAlta=" + fechaAlta
+				+ ", baja=" + baja + ", lstCliente=" + lstCliente + ", total="
+				+ total + "]";
 	}
 
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + idCuentaCorriente;
-		return result;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		CuentaCorriente other = (CuentaCorriente) obj;
-		if (idCuentaCorriente != other.idCuentaCorriente)
-			return false;
-		return true;
-	}
-	
-	
-	
 	
 
 }

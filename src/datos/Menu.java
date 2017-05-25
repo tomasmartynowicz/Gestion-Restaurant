@@ -1,16 +1,20 @@
 package datos;
 
 import java.util.GregorianCalendar;
+import java.util.Set;
 
 public class Menu {
 
 	
-	private int idMenu;
+	private long idMenu;
 	private String nombre;
 	private GregorianCalendar fecha;
-	private int diaDeLaSemana;
+	private int diaDeSemana;
+	private Set<Producto> lstProducto;
 	
 	
+
+
 	public Menu() {
 	}
 
@@ -18,19 +22,28 @@ public class Menu {
 	public Menu(String nombre, GregorianCalendar fecha, int diaDeLaSemana) {
 		this.nombre = nombre;
 		this.fecha = fecha;
-		this.diaDeLaSemana = diaDeLaSemana;
+		this.diaDeSemana = diaDeLaSemana;
 	}
 
 
-	public int getIdMenu() {
+	public long getIdMenu() {
 		return idMenu;
 	}
 
 
-	protected void setIdMenu(int idMenu) {
+	protected void setIdMenu(long idMenu) {
 		this.idMenu = idMenu;
 	}
 
+
+	public Set<Producto> getLstProducto() {
+		return lstProducto;
+	}
+
+
+	public void setLstProducto(Set<Producto> lstProducto) {
+		this.lstProducto = lstProducto;
+	}
 
 	public String getNombre() {
 		return nombre;
@@ -53,52 +66,21 @@ public class Menu {
 
 
 	public int getDiaDeLaSemana() {
-		return diaDeLaSemana;
+		return diaDeSemana;
 	}
 
 
 	public void setDiaDeLaSemana(int diaDeLaSemana) {
-		this.diaDeLaSemana = diaDeLaSemana;
+		this.diaDeSemana = diaDeLaSemana;
 	}
 	
 	
 	@Override
 	public String toString() {
-		return "Menu [idMenu=" + idMenu + ", nombre=" + nombre + ", fecha=" + fecha + ", diaDeLaSemana=" + diaDeLaSemana
+		return "Menu [idMenu=" + idMenu + ", nombre=" + nombre + ", fecha=" + fecha + ", diaDeLaSemana=" + diaDeSemana
 				+ "]";
 	}
-
-
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + idMenu;
-		result = prime * result + ((nombre == null) ? 0 : nombre.hashCode());
-		return result;
-	}
-
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Menu other = (Menu) obj;
-		if (idMenu != other.idMenu)
-			return false;
-		if (nombre == null) {
-			if (other.nombre != null)
-				return false;
-		} else if (!nombre.equals(other.nombre))
-			return false;
-		return true;
-	}
-
-
+	
 	
 	
 	

@@ -1,7 +1,8 @@
 package datos;
 
 public class Subrubro {
-	private int idSubrubro;
+	
+	private long idSubrubro;
 	private String nombre;
 	
 	
@@ -14,12 +15,12 @@ public class Subrubro {
 	}
 
 
-	public int getIdSubrubro() {
+	public long getIdSubrubro() {
 		return idSubrubro;
 	}
 
 
-	protected void setIdSubrubro(int idSubrubro) {
+	protected void setIdSubrubro(long idSubrubro) {
 		this.idSubrubro = idSubrubro;
 	}
 
@@ -39,34 +40,7 @@ public class Subrubro {
 		return "Subrubro [idSubrubro=" + idSubrubro + ", nombre=" + nombre + "]";
 	}
 	
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + idSubrubro;
-		result = prime * result + ((nombre == null) ? 0 : nombre.hashCode());
-		return result;
-	}
-
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Subrubro other = (Subrubro) obj;
-		if (idSubrubro != other.idSubrubro)
-			return false;
-		if (nombre == null) {
-			if (other.nombre != null)
-				return false;
-		} else if (!nombre.equals(other.nombre))
-			return false;
-		return true;
-	}
+	
 	
 
 }

@@ -2,7 +2,7 @@ package datos;
 
 public class TipoCliente {
 	
-	private int idTipoCliente;
+	private long idTipoCliente;
 	private String nombre;
 	
 	
@@ -21,14 +21,14 @@ public class TipoCliente {
 
 
 
-	public int getIdTipoCliente() {
+	public long getIdTipoCliente() {
 		return idTipoCliente;
 	}
 
 
 
 
-	protected void setIdTipoCliente(int idTipoCliente) {
+	protected void setIdTipoCliente(long idTipoCliente) {
 		this.idTipoCliente = idTipoCliente;
 	}
 
@@ -50,34 +50,9 @@ public class TipoCliente {
 
 
 	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + idTipoCliente;
-		result = prime * result + ((nombre == null) ? 0 : nombre.hashCode());
-		return result;
-	}
-
-
-
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		TipoCliente other = (TipoCliente) obj;
-		if (idTipoCliente != other.idTipoCliente)
-			return false;
-		if (nombre == null) {
-			if (other.nombre != null)
-				return false;
-		} else if (!nombre.equals(other.nombre))
-			return false;
-		return true;
+	public String toString() {
+		return "TipoCliente [idTipoCliente=" + idTipoCliente + ", nombre="
+				+ nombre + "]";
 	}
 	
 	
