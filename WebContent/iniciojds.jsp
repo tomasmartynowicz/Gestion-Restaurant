@@ -4,16 +4,21 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>Insert title here</title>
+	<title>Jefe de salón</title>
 	
-		<!-- Bootstrap core CSS -->
+	<!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-theme.css" rel="stylesheet">
     
     <!-- Custom styles for this template -->
     <link href="css/personal.css" rel="stylesheet">
+    
+    <script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js" ></script>
 </head>
 <body>
 	<%@ include file="/cabecerajds.jsp" %>
+	
 	
 
 </body>

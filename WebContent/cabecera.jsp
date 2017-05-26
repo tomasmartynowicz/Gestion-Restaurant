@@ -9,7 +9,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="pull-left" href="#"><IMG src="/GestionRestaurant/imagenes/LogoUnla1.png"></a>
+          <a class="pull-left" href="#"><IMG src="/GestionRestaurant/imagenes/LogoUnla50x46.png"></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse navbar-right">
             <h1>Orientación a objetos II</h1>

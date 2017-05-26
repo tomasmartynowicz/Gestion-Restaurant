@@ -10,20 +10,29 @@
 					class="icon-bar"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span>
 			</button>
-			<a class="pull-left" href="#"><IMG
-				src="/GestionRestaurant/imagenes/LogoUnla1.png"></a>
+			<a class="pull-left" href="iniciojds.jsp"><IMG
+				src="/GestionRestaurant/imagenes/LogoUnla50x46.png"></a>
 		</div>
 		<div id="navbar" class="collapse navbar-collapse">
 		
 			<ul class="nav navbar-nav">
-				<li class="active"><a href="#">Home</a></li>
-				<li><a href="#mesas">Mesas</a></li>
+				<li class="active"><a href="iniciojds.jsp">Layout</a></li>
+				 <li class="dropdown">
+                	<a href="#" data-toggle="dropdown" class="dropdown-toggle">Mesa <b class="caret"></b></a>
+                	<ul class="dropdown-menu">
+                    	<li><a href="crearmesa.jsp">Crear</a></li>
+                    	<li><a href="modificarmesa.jsp">Modificar</a></li>
+                    	<li><a href="eliminarmesa.jsp">Eliminar</a></li>
+                	</ul>
+            	</li>
 			</ul>
-			<div id="cerrarSesion" class="navbar-right">
-				<form>
-					<button type="submit" class="btn btn-success">Cerrar sesión</button>
-				</form>
-			</div>
+			<ul class="nav pull-right">
+           		 <li>
+           			 <form>
+						<button type="submit" class="btn btn-success">Cerrar sesión</button>
+					</form>
+				</li>
+        	</ul> 
 		</div>
 		<!--/.navbar-collapse -->
 	</div>

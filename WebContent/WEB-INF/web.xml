@@ -15,4 +15,22 @@
 		<welcome-file>default.jsp</welcome-file>
 	</welcome-file-list>
 
+	<servlet>
+		<servlet-name>ControladorTraerSalones</servlet-name>
+		<servlet-class>controladores.ControladorTraerSalones</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ControladorTraerSalones</servlet-name>
+		<url-pattern>/TraerSalones</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>ControladorTraerMesas</servlet-name>
+		<servlet-class>controladores.ControladorTraerMesas</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ControladorTraerMesas</servlet-name>
+		<url-pattern>/TraerMesas</url-pattern>
+	</servlet-mapping>
+
 </web-app>
