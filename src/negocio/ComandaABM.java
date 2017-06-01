@@ -57,6 +57,14 @@ public class ComandaABM {
 		dao.actualizar(comanda);
 	}
 	
+	public void eliminarProducto(long idComanda, Producto producto) throws Exception {
+		Comanda comanda = traerComanda(idComanda);
+		
+		comanda.eliminar(producto);
+		
+		dao.actualizar(comanda);
+	}
+	
 	
 	
 }
