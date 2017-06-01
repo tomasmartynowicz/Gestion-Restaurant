@@ -68,6 +68,9 @@ public class ComandaDao {
 		try {
 			iniciaOperacion();
 			objeto = (Comanda) session.get(Comanda.class, idComanda);
+			Hibernate.initialize(objeto.getEmpleado());
+			Hibernate.initialize(objeto.getCliente());
+			Hibernate.initialize(objeto.getMesa());
 		} finally {
 			session.close();
 		}

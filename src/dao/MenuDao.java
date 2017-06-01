@@ -68,6 +68,7 @@ public class MenuDao {
 		try {
 			iniciaOperacion();
 			objeto = (Menu) session.get(Menu.class, idMenu);
+			Hibernate.initialize(objeto.getLstProducto());
 		} finally {
 			session.close();
 		}

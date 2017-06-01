@@ -68,6 +68,7 @@ public class ClienteDao {
 		try {
 			iniciaOperacion();
 			objeto = (Cliente) session.get(Cliente.class, idCliente);
+			Hibernate.initialize(objeto.getTipoCliente());
 		} finally {
 			session.close();
 		}

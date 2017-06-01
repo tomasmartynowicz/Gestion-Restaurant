@@ -1,11 +1,17 @@
 package dao;
 
 
+import java.util.List;
+
 import org.hibernate.Hibernate;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+
+import datos.Comanda;
 import datos.Mesa;
+import datos.PrecioProductoLista;
+import datos.Producto;
 
 public class MesaDao {
 	private static Session session;
@@ -68,10 +74,58 @@ public class MesaDao {
 		try {
 			iniciaOperacion();
 			objeto = (Mesa) session.get(Mesa.class, idMesa);
+			Hibernate.initialize(objeto.getLstReporteMesa());
+			Hibernate.initialize(objeto.getLstComanda());
+		} finally {
+			session.close();
+		}
+		return objeto;
+	}
+	
+	public Mesa traerMesa(int nro) throws HibernateException {
+		Mesa objeto = null;
+		try {
+			iniciaOperacion();
+			objeto = (Mesa) session.createQuery("from Mesa m where m.nroMesa =" + nro).uniqueResult();
+		} finally {
+			session.close();
+		}
+		return objeto;
+	}
+	
+	public Mesa traerMesaYDetalle(int nro) throws HibernateException {
+		Mesa objeto = null;
+		try {
+			iniciaOperacion();
+			objeto = (Mesa) session.createQuery("from Mesa m where m.nroMesa =" + nro).uniqueResult();
+			Hibernate.initialize(objeto.getLstComanda());
+			for(Comanda c: objeto.getLstComanda()){
+				Hibernate.initialize(c.getLstProducto());
+				for(Producto p: c.getLstProducto()){
+					Hibernate.initialize(p.getLstPrecioProductoLista());
+					for(PrecioProductoLista ppl: p.getLstPrecioProductoLista()){
+						Hibernate.initialize(ppl.getListaPrecio());
+						Hibernate.initialize(ppl.getListaPrecio().getTipoCliente());
+					}
+				}
+			}
 		} finally {
 			session.close();
 		}
 		return objeto;
 	}
 
+	
+	@SuppressWarnings("unchecked")
+	public List<Mesa> traerMesaPorSalon(int salon){
+		List<Mesa> lstMesas=null;
+		try{
+			iniciaOperacion();
+			lstMesas=(List<Mesa>)session.createQuery("from Mesa m where m.salon ="+salon).list() ;
+		}
+		finally{
+			session.close();
+		}
+		return lstMesas;
+	}
 }

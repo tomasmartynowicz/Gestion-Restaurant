@@ -68,6 +68,7 @@ public class ViandaDao {
 		try {
 			iniciaOperacion();
 			objeto = (Vianda) session.get(Vianda.class, idVianda);
+			Hibernate.initialize(objeto.getLstProducto());
 		} finally {
 			session.close();
 		}

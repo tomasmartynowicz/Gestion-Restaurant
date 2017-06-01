@@ -5,6 +5,8 @@ import org.hibernate.Hibernate;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+
+import datos.Componente;
 import datos.Producto;
 
 public class ProductoDao {
@@ -62,12 +64,31 @@ public class ProductoDao {
 			session.close();
 		}
 	}
-
+	
 	public Producto traerProducto(long idProducto) throws HibernateException {
 		Producto objeto = null;
 		try {
 			iniciaOperacion();
 			objeto = (Producto) session.get(Producto.class, idProducto);
+			Hibernate.initialize(objeto.getLstComponente());
+		} finally {
+			session.close();
+		}
+		return objeto;
+	}
+
+	public Producto traerProductoYDetalle(long idProducto) throws HibernateException {
+		Producto objeto = null;
+		try {
+			iniciaOperacion();
+			objeto = (Producto) session.get(Producto.class, idProducto);
+			Hibernate.initialize(objeto.getLstComponente());
+			for(Componente c: objeto.getLstComponente()){
+				Hibernate.initialize(c.getIngrediente());
+			}
+			Hibernate.initialize(objeto.getRubro());
+			Hibernate.initialize(objeto.getLstSubrubro());
+			Hibernate.initialize(objeto.getLstPrecioProductoLista());
 		} finally {
 			session.close();
 		}

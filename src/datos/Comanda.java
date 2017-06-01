@@ -19,10 +19,10 @@ public class Comanda {
 	}
 
 
-	public Comanda(Empleado empleado, Cliente cliente, int estado, GregorianCalendar fechaYHora, Mesa mesa) {
+	public Comanda(Empleado empleado, Cliente cliente, GregorianCalendar fechaYHora, Mesa mesa) {
 		this.empleado = empleado;
 		this.cliente = cliente;
-		this.estado = estado;
+		setEstado(1);
 		this.fechaYHora = fechaYHora;
 		this.mesa = mesa;
 	}
@@ -100,8 +100,15 @@ public class Comanda {
 
 	@Override
 	public String toString() {
-		return "Comanda [idComanda=" + idComanda + ", empleado=" + empleado + ", cliente=" + cliente + ", estado="
-				+ estado + ", fechaYHora=" + fechaYHora + ", mesa=" + mesa + "]";
+		return "Comanda [idComanda=" + idComanda + ", estado=" + estado + "]";
+	}
+	
+	public boolean agregar(Producto producto) {
+		return lstProducto.add(producto);
+	}
+	
+	public boolean eliminar(Producto producto) {
+		return lstProducto.remove(producto);
 	}
 	
 	

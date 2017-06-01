@@ -65,13 +65,13 @@ public class Menu {
 	}
 
 
-	public int getDiaDeLaSemana() {
+	public int getDiaDeSemana() {
 		return diaDeSemana;
 	}
 
 
-	public void setDiaDeLaSemana(int diaDeLaSemana) {
-		this.diaDeSemana = diaDeLaSemana;
+	public void setDiaDeSemana(int diaDeSemana) {
+		this.diaDeSemana = diaDeSemana;
 	}
 	
 	

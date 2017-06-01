@@ -98,6 +98,18 @@ public class ListaPrecio {
 	public void setLstPrecioProductoLista(Set<PrecioProductoLista> lstPrecioProductoLista) {
 		this.lstPrecioProductoLista = lstPrecioProductoLista;
 	}
+
+
+
+	@Override
+	public String toString() {
+		return "ListaPrecio [idListaPrecio=" + idListaPrecio + ", descripcion=" + descripcion + ", baja=" + baja
+				+ ", fechaVigencia=" + fechaVigencia + "]";
+	}
+
+
+
+
 	
 
 	

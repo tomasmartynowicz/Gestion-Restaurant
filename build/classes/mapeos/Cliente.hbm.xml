@@ -8,6 +8,6 @@
 		<property column="dni" name="dni" type="int"/>
 		<property column="habitacion" name="habitacion" type="int"/>
 	<many-to-one name="cuentaCorriente" class="datos.CuentaCorriente" column="idCuentaCorriente"/>
-			<!--  <many-to-one name="tipoCliente" class="datos.TipoCliente" column="idTipoCliente" /> -->
+	<many-to-one name="tipoCliente" class="datos.TipoCliente" column="idTipoCliente" />
 	</class>
 </hibernate-mapping>

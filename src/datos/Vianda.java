@@ -52,14 +52,11 @@ public class Vianda {
 
 	@Override
 	public String toString() {
-		return "Vianda [idVianda=" + idVianda + ", nombre=" + nombre + "]";
+		return "Vianda [idVianda=" + idVianda + ", nombre=" + nombre + ", lstProducto=" + lstProducto + "]";
 	}
+
 	
-	
-	
-	
-	
-	
+		
 	
 	
 	

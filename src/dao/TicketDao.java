@@ -68,6 +68,9 @@ public class TicketDao {
 		try {
 			iniciaOperacion();
 			objeto = (Ticket) session.get(Ticket.class, idTicket);
+			Hibernate.initialize(objeto.getEmpleado());
+			Hibernate.initialize(objeto.getMesa());
+			Hibernate.initialize(objeto.getCliente());
 		} finally {
 			session.close();
 		}

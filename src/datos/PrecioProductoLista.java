@@ -6,7 +6,7 @@ public class PrecioProductoLista {
 
 	private long idPrecioProductoLista;
 	private Producto producto;
-	private Set<ListaPrecio> listaPrecio;
+	private ListaPrecio listaPrecio;
 	private double precio;
 	
 	
@@ -31,12 +31,12 @@ public class PrecioProductoLista {
 	}
 
 
-	public Set<ListaPrecio> getListaPrecio() {
+	public ListaPrecio getListaPrecio() {
 		return listaPrecio;
 	}
 
 
-	public void setListaPrecio(Set<ListaPrecio> listaPrecio) {
+	public void setListaPrecio(ListaPrecio listaPrecio) {
 		this.listaPrecio = listaPrecio;
 	}
 
@@ -51,11 +51,6 @@ public class PrecioProductoLista {
 	}
 
 
-	@Override
-	public String toString() {
-		return "PrecioProductoLista [listaPrecio=" + listaPrecio + ", precio=" + precio + "]";
-	}
-
 
 	public long getIdPrecioProductoLista() {
 		return idPrecioProductoLista;
@@ -64,6 +59,12 @@ public class PrecioProductoLista {
 
 	public void setIdPrecioProductoLista(long idPrecioProductoLista) {
 		this.idPrecioProductoLista = idPrecioProductoLista;
+	}
+
+
+	@Override
+	public String toString() {
+		return "PrecioProductoLista [idPrecioProductoLista=" + idPrecioProductoLista + ", precio=" + precio + "]";
 	}
 	
 	

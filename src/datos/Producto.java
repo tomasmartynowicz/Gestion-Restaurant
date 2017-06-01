@@ -90,10 +90,10 @@ public class Producto {
 	@Override
 	public String toString() {
 		return "Producto [idProducto=" + idProducto + ", nombre=" + nombre + ", descripcion=" + descripcion + ", baja="
-				+ baja + ", rubro=" + rubro + "]";
+				+ baja + "]";
 	}
-	
-	
+
+
 	
 	
 	

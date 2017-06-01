@@ -68,6 +68,9 @@ public class HistorialComandaDao {
 		try {
 			iniciaOperacion();
 			objeto = (HistorialComanda) session.get(HistorialComanda.class, idHistorialComanda);
+			Hibernate.initialize(objeto.getMesa());
+			Hibernate.initialize(objeto.getTicket());
+			Hibernate.initialize(objeto.getEmpleado());
 		} finally {
 			session.close();
 		}

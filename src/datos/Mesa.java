@@ -18,7 +18,7 @@ public class Mesa {
 	}
 
 
-	public Mesa(int nroMesa, int capacidad, int salon, int union, char estado) {
+	public Mesa(int nroMesa, int capacidad, int salon, int union, int estado) {
 		this.nroMesa = nroMesa;
 		this.capacidad = capacidad;
 		this.salon = salon;
@@ -112,8 +112,8 @@ public class Mesa {
 		return "Mesa [idMesa=" + idMesa + ", nroMesa=" + nroMesa + ", capacidad=" + capacidad + ", salon=" + salon
 				+ ", union=" + union + ", estado=" + estado + "]";
 	}
-	
-	
+
+
 	
 	
 	

@@ -10,7 +10,7 @@
 		<property column="fechaVigencia" name="fechaVigencia" type="calendar"/>
 		<many-to-one name="tipoCliente" class="datos.TipoCliente" column="idTipoCliente" not-null="true"/>
  		<set name="lstPrecioProductoLista" table="precioProductoLista" order-by="idPrecioProductoLista" inverse="true" lazy="true" fetch="select">
-			<key column="idListaPrecio" not-null="true"/>
+			<key column="idListaPrecio"/>
 			<one-to-many class="datos.PrecioProductoLista"/>
 		</set>
  	</class>
