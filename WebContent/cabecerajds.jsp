@@ -10,13 +10,20 @@
 					class="icon-bar"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span>
 			</button>
+			
+			<!-- Logo de la Unla -->
 			<a class="pull-left" href="iniciojds.jsp"><IMG
 				src="/GestionRestaurant/imagenes/LogoUnla50x46.png"></a>
 		</div>
-		<div id="navbar" class="collapse navbar-collapse">
 		
+		<!-- Navegador -->
+		<div id="navbar" class="collapse navbar-collapse">
 			<ul class="nav navbar-nav">
+			
+				<!-- Home -->
 				<li class="active"><a href="iniciojds.jsp">Layout</a></li>
+				
+				<!-- Dropdown de Mesa -->
 				 <li class="dropdown">
                 	<a href="#" data-toggle="dropdown" class="dropdown-toggle">Mesa <b class="caret"></b></a>
                 	<ul class="dropdown-menu">
@@ -26,6 +33,8 @@
                 	</ul>
             	</li>
 			</ul>
+			
+			<!-- Cerrar Sesion -->
 			<ul class="nav pull-right">
            		 <li>
            			 <form>
@@ -34,6 +43,5 @@
 				</li>
         	</ul> 
 		</div>
-		<!--/.navbar-collapse -->
 	</div>
 </nav>
