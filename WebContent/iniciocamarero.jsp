@@ -33,22 +33,22 @@
 					<th></th>
 				</tr>
 				<tr>
-					<td>1</td>
-					<td>Cafeteria</td>
-					<td>3</td>
-					<td>Carlos Rodriguez</td>
-					<td>09:32</td>
-					<td><button type="submit" class="btn btn-default">Platos y Bebidas</button></td>
-					<td><button type="submit" class="btn btn-danger">Anular</button></td>
+					<td class="vert-align">1</td>
+					<td class="vert-align">Cafeteria</td>
+					<td class="vert-align">3</td>
+					<td class="vert-align">Carlos Rodriguez</td>
+					<td class="vert-align">09:32</td>
+					<td class="vert-align"><button type="submit" class="btn btn-default btn-sm">Platos y Bebidas</button></td>
+					<td class="vert-align"><button type="submit" class="btn btn-danger btn-sm">Anular</button></td>
 				</tr>
 				<tr>
-					<td>2</td>
-					<td>Cafeteria</td>
-					<td>5</td>
-					<td>Carla Martinez</td>
-					<td>09:37</td>
-					<td><button type="submit" class="btn btn-default">Platos y Bebidas</button></td>
-					<td><button type="submit" class="btn btn-danger">Anular</button></td>
+					<td class="vert-align">2</td>
+					<td class="vert-align">Cafeteria</td>
+					<td class="vert-align">5</td>
+					<td class="vert-align">Carla Martinez</td>
+					<td class="vert-align">09:37</td>
+					<td class="vert-align"><button type="submit" class="btn btn-default btn-sm">Platos y Bebidas</button></td>
+					<td class="vert-align"><button type="submit" class="btn btn-danger btn-sm">Anular</button></td>
 				</tr>
 			</table>
 		</div>

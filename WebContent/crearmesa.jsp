@@ -15,12 +15,34 @@
     
     <script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js" ></script>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#guardar').click(function() {
+				var salon = $('#salon').val();
+				var nroMesa = $('#nroMesa').val();
+				var cantidadComensales = $('#cantidadComensales').val()
+				$.ajax({
+					method : "POST",
+					url : "CrearMesa",
+					data : {
+						salon : salon,
+						nroMesa : nroMesa,
+						cantidadComensales : cantidadComensales
+					},
+					async : false
+				}).done(function(data) {
+					$("#response").html(data);
+				})
+			});
+		});
+	</script>
 </head>
 <body>
 	<%@ include file="/cabecerajds.jsp" %>
 	
 	<div class="jumbotron">
-		<div class="container">
+		<div id="container" class="container">
 			<h2>Crear Nueva Mesa</h2>			
 			<form class="form-horizontal">
 				<div class="form-group">
@@ -37,9 +59,9 @@
 					</div>
 				</div>
 				<div class="form-group">
-					<label class="control-label col-sm-2" for="capacidad">Capacidad:</label> 
+					<label class="control-label col-sm-2" for="cantidadComensales">Capacidad:</label> 
 					<div class="col-sm-1">
-						<select class="form-control" id="capacidad">
+						<select class="form-control" id="cantidadComensales">
 							<option>2</option>
 							<option>4</option>
 							<option>6</option>
@@ -49,7 +71,7 @@
 				</div>
 				<div class="form-group">
 					<div class="col-sm-offset-2 col-sm-10">
-						<button type="submit" class="btn btn-default">Guardar</button>
+						<button id="guardar" type="submit" class="btn btn-default">Guardar</button>
 					</div>
 				</div>
 			</form>
@@ -57,6 +79,10 @@
 
 		</div>
 
+
+	</div>
+	
+	<div id="response">
 	</div>
 	
 

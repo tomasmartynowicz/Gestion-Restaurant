@@ -12,33 +12,31 @@
 			</button>
 			
 			<!-- Logo de la Unla -->
-			<a class="pull-left" href="iniciojds.jsp"><IMG
-				src="/GestionRestaurant/imagenes/LogoUnla50x46.png"></a>
+     		<a class="pull-left" href="iniciojds.jsp"><IMG src="/GestionRestaurant/imagenes/LogoUnla50x46.png"></a>
 		</div>
-		
+	
 		<!-- Navegador -->
 		<div id="navbar" class="collapse navbar-collapse">
-			<ul class="nav navbar-nav">
 			
+			<ul class="nav navbar-nav">
 				<!-- Home -->
-				<li class="active"><a href="iniciojds.jsp">Layout</a></li>
+				<li><a href="iniciojds.jsp">Layout</a></li>
 				
 				<!-- Dropdown de Mesa -->
-				 <li class="dropdown">
-                	<a href="#" data-toggle="dropdown" class="dropdown-toggle">Mesa <b class="caret"></b></a>
+				<li class="dropdown">
+              	  	<a href="#" data-toggle="dropdown" class="dropdown-toggle">Mesa <b class="caret"></b></a>
                 	<ul class="dropdown-menu">
                     	<li><a href="crearmesa.jsp">Crear</a></li>
                     	<li><a href="modificarmesa.jsp">Modificar</a></li>
                     	<li><a href="eliminarmesa.jsp">Eliminar</a></li>
                 	</ul>
             	</li>
-			</ul>
-			
+			</ul>	
 			<!-- Cerrar Sesion -->
 			<ul class="nav pull-right">
            		 <li>
            			 <form>
-						<button type="submit" class="btn btn-success">Cerrar sesión</button>
+						<button type="submit" class="btn btn-success navbar-btn">Cerrar sesión</button>
 					</form>
 				</li>
         	</ul> 

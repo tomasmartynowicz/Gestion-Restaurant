@@ -17,7 +17,7 @@
 		<!-- Navegador -->
 		<div id="navbar" class="collapse navbar-collapse">
 			<ul class="nav navbar-nav">
-				<li class="active"><a href="iniciocamarero.jsp">Home</a></li>
+				<li><a href="iniciocamarero.jsp">Home</a></li>
 				
 				<!-- Dropdown Comanda -->
 				 <li class="dropdown">
@@ -34,7 +34,7 @@
 			<ul class="nav pull-right">
            		 <li>
            			 <form>
-						<button type="submit" class="btn btn-success">Cerrar sesión</button>
+						<button type="submit" class="btn btn-success navbar-btn">Cerrar sesión</button>
 					</form>
 				</li>
         	</ul> 

@@ -38,7 +38,7 @@
 					</div>
 				</div>
 				<div class="form-group">
-					<label class="control-label col-sm-2" for="salon">Mesa:</label>
+					<label class="control-label col-sm-2" for="mesas">Mesa:</label>
 					<div class="col-sm-1">
 						<select class="form-control" id="mesas">
 						</select>

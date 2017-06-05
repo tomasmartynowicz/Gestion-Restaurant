@@ -6,7 +6,6 @@
 	id="WebApp_ID" version="3.1">
 	<display-name>GestionRestaurant</display-name>
 	<welcome-file-list>
-		<welcome-file>iniciocamarero.jsp</welcome-file>
 		<welcome-file>index.html</welcome-file>
 		<welcome-file>index.htm</welcome-file>
 		<welcome-file>index.jsp</welcome-file>
@@ -33,4 +32,13 @@
 		<url-pattern>/TraerMesas</url-pattern>
 	</servlet-mapping>
 
+	<servlet>
+		<servlet-name>ControladorCrearMesa</servlet-name>
+		<servlet-class>controladores.ControladorCrearMesa</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ControladorCrearMesa</servlet-name>
+		<url-pattern>/CrearMesa</url-pattern>
+	</servlet-mapping>
+	
 </web-app>
