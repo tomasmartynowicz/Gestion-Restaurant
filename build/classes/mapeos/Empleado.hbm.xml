@@ -8,5 +8,6 @@
 		<property column="tipoEmpleado" name="tipoEmpleado" type="string" />
 		<property column="nombre" name="nombre" type="string" />
 		<property column="apellido" name="apellido" type="string" />
+		<property column="dni" name="dni" type="int"/>
 	</class>
 </hibernate-mapping>
