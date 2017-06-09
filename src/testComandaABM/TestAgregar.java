@@ -24,6 +24,11 @@ public class TestAgregar {
 		ComandaABM abm = new ComandaABM();
 		
 		abm.agregar(empleado, cliente, mesa);
+		abm.agregar(empleado, cliente, mesa);
+		abm.agregar(empleado, cliente, mesa);
+		abm.agregar(empleado, cliente, mesa);
+		abm.agregar(empleado, cliente, mesa);
+		abm.agregar(empleado, cliente, mesa);
 		
 	}
 

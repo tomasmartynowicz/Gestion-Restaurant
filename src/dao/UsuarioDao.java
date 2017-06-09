@@ -5,8 +5,6 @@ import org.hibernate.Hibernate;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-
-import datos.Empleado;
 import datos.Usuario;
 
 public class UsuarioDao {
@@ -81,24 +79,7 @@ public class UsuarioDao {
 		try {
 			iniciaOperacion();
 			objeto = (Usuario) session.createQuery(
-					"from Usuario u where u.nombreUsuario = '" + nombreUsuario + "'").uniqueResult();
-			if(objeto != null) Hibernate.initialize(objeto.getEmpleado());
-		} finally {
-			session.close();
-		}
-		return objeto;
-	}
-	
-	public Usuario traerUsuario(Empleado e) throws HibernateException {
-		Usuario objeto = null;
-		try {
-			iniciaOperacion();
-			String hql="from Usuario u inner join fetch u.empleado e where e.idEmpleado =" + e.getIdEmpleado();
-			objeto = (Usuario) session.createQuery(hql).uniqueResult();
-			if (objeto!=null){
-				Hibernate.initialize(objeto.getCategoria());
-				Hibernate.initialize(objeto.getCategoria().getLstPermiso());
-			}
+					"from Usuario u where u.nombreUsuario =" + nombreUsuario).uniqueResult();
 		} finally {
 			session.close();
 		}

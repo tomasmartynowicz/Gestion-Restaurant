@@ -6,7 +6,6 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import datos.Cliente;
-import datos.Mesa;
 
 public class ClienteDao {
 	private static Session session;
@@ -70,17 +69,6 @@ public class ClienteDao {
 			iniciaOperacion();
 			objeto = (Cliente) session.get(Cliente.class, idCliente);
 			Hibernate.initialize(objeto.getTipoCliente());
-		} finally {
-			session.close();
-		}
-		return objeto;
-	}
-	
-	public Cliente traerCliente(int dni) throws HibernateException {
-		Cliente objeto = null;
-		try {
-			iniciaOperacion();
-			objeto = (Cliente) session.createQuery("from Cliente c where c.dni =" + dni).uniqueResult();
 		} finally {
 			session.close();
 		}

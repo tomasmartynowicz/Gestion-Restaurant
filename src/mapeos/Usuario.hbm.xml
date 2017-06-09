@@ -3,14 +3,11 @@
 <hibernate-mapping>
 	<class name="datos.Usuario" table="usuario">
 		<id column="idUsuario" name="idUsuario">
-			<generator class="foreign">
-				<param name="property">empleado</param>
-			</generator>
+			<generator class="identity" />
 		</id>
 		<property column="nombreUsuario" name="nombreUsuario" type="string"/>
 		<property column="clave" name="clave" type="string"/>
-		<property column="baja" name="baja" type="boolean"/>
-		<many-to-one name="categoria" class="datos.Categoria" column="idCategoria" not-null="true"/>
+		
 		<one-to-one name="empleado" class="datos.Empleado"></one-to-one>
 	</class>
 </hibernate-mapping>
