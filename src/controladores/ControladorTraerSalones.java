@@ -33,7 +33,7 @@ public class ControladorTraerSalones extends HttpServlet {
 				salones.add("Bar");
 				salones.add("Cafeteria");
 				request.setAttribute("salones", salones);
-				request.getRequestDispatcher("/ajax/ajaxvistasalones.jsp").forward(request, response);
+				request.getRequestDispatcher("/ajaxvistasalones.jsp").forward(request, response);
 	} 
 	
 

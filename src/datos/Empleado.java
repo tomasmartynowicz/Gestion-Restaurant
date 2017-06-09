@@ -6,18 +6,24 @@ public class Empleado {
 	private String tipoEmpleado;
 	private String nombre;
 	private String apellido;
+	private int dni;
 	
 	
 	
+	
+
+
+
 	public Empleado() {
 	}
 
 
 
-	public Empleado(String tipoEmpleado, String nombre, String apellido, Usuario usuario) {
+	public Empleado(String tipoEmpleado, String nombre, String apellido, int dni, Usuario usuario) {
 		this.tipoEmpleado = tipoEmpleado;
 		this.nombre = nombre;
 		this.apellido = apellido;
+		this.dni = dni;
 	}
 
 
@@ -68,7 +74,15 @@ public class Empleado {
 		this.apellido = apellido;
 	}
 
+	public int getDni() {
+		return dni;
+	}
 
+
+
+	public void setDni(int dni) {
+		this.dni = dni;
+	}
 
 	@Override
 	public String toString() {

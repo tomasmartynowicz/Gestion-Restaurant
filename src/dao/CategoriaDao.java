@@ -5,10 +5,9 @@ import org.hibernate.Hibernate;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import datos.Cliente;
-import datos.Mesa;
+import datos.Categoria;
 
-public class ClienteDao {
+public class CategoriaDao {
 	private static Session session;
 	private Transaction tx;
 
@@ -23,7 +22,7 @@ public class ClienteDao {
 		throw new HibernateException("ERROR en la capa de acceso a datos", he);
 	}
 
-	public int agregar(Cliente objeto) {
+	public int agregar(Categoria objeto) {
 		int id = 0;
 		try {
 			iniciaOperacion();
@@ -38,7 +37,7 @@ public class ClienteDao {
 		return id;
 	}
 
-	public void actualizar(Cliente objeto) throws HibernateException {
+	public void actualizar(Categoria objeto) throws HibernateException {
 		try {
 			iniciaOperacion();
 			session.update(objeto);
@@ -51,7 +50,7 @@ public class ClienteDao {
 		}
 	}
 
-	public void eliminar(Cliente objeto) throws HibernateException {
+	public void eliminar(Categoria objeto) throws HibernateException {
 		try {
 			iniciaOperacion();
 			session.delete(objeto);
@@ -64,27 +63,15 @@ public class ClienteDao {
 		}
 	}
 
-	public Cliente traerCliente(long idCliente) throws HibernateException {
-		Cliente objeto = null;
+	public Categoria traerCategoria(long idCategoria) throws HibernateException {
+		Categoria objeto = null;
 		try {
 			iniciaOperacion();
-			objeto = (Cliente) session.get(Cliente.class, idCliente);
-			Hibernate.initialize(objeto.getTipoCliente());
+			objeto = (Categoria) session.get(Categoria.class, idCategoria);
+			Hibernate.initialize(objeto.getLstPermiso());
 		} finally {
 			session.close();
 		}
 		return objeto;
 	}
-	
-	public Cliente traerCliente(int dni) throws HibernateException {
-		Cliente objeto = null;
-		try {
-			iniciaOperacion();
-			objeto = (Cliente) session.createQuery("from Cliente c where c.dni =" + dni).uniqueResult();
-		} finally {
-			session.close();
-		}
-		return objeto;
-	}
-
 }

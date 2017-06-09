@@ -57,13 +57,5 @@ public class MesaABM {
 		return dao.traerMesaPorSalon(salon);
 	}
 	
-	public List<Mesa> traerMesas() throws Exception {
-		List<Mesa> mesas = dao.traerMesa();
-		
-		if(mesas == null) throw new Exception("ERROR, no hay mesas registradas");
-		
-		return mesas;
-	}
-	
 	
 }
