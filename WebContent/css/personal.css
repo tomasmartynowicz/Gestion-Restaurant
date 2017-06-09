@@ -36,3 +36,19 @@ body {
 .table tbody>tr>td.vert-align{
     vertical-align: middle;
 }
+
+table {
+	width: 100%;
+}
+
+tbody td, thead th {
+    width: 20%;  /* Optional */
+}
+
+thead, tbody { display: block; }
+
+tbody {
+    height: 400px;       /* Just for the demo          */
+    overflow-y: auto;    /* Trigger vertical scroll    */
+    overflow-x: hidden;  /* Hide the horizontal scroll */
+}

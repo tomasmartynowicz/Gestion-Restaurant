@@ -31,6 +31,15 @@
 		<servlet-name>ControladorTraerMesas</servlet-name>
 		<url-pattern>/TraerMesas</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>ControladorTraerMesaPorNro</servlet-name>
+		<servlet-class>controladores.ControladorTraerMesaPorNro</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ControladorTraerMesaPorNro</servlet-name>
+		<url-pattern>/TraerMesaPorNro</url-pattern>
+	</servlet-mapping>
 
 	<servlet>
 		<servlet-name>ControladorCrearMesa</servlet-name>
@@ -40,5 +49,25 @@
 		<servlet-name>ControladorCrearMesa</servlet-name>
 		<url-pattern>/CrearMesa</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>ControladorTraerComandas</servlet-name>
+		<servlet-class>controladores.ControladorTraerComandas</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ControladorTraerComandas</servlet-name>
+		<url-pattern>/TraerComandas</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>ControladorTraerModificarComanda</servlet-name>
+		<servlet-class>controladores.ControladorTraerModificarComanda</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ControladorTraerModificarComanda</servlet-name>
+		<url-pattern>/TraerModificarComanda</url-pattern>
+	</servlet-mapping>
+	
+	
 	
 </web-app>

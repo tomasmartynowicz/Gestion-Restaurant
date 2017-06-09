@@ -3,6 +3,7 @@ package negocio;
 
 import java.util.GregorianCalendar;
 import java.util.TimeZone;
+import java.util.List;
 
 import datos.Producto;
 import datos.Mesa;
@@ -63,6 +64,14 @@ public class ComandaABM {
 		comanda.eliminar(producto);
 		
 		dao.actualizar(comanda);
+	}
+	
+	public List<Comanda> traerComandaPorEmpleado(long idEmpleado) throws Exception {
+		List<Comanda> comandas = dao.traerComandaPorEmpleado(idEmpleado);
+		
+		if(comandas == null) throw new Exception("ERROR, el empleado de id '" + idEmpleado + "' no tiene ninguna comanda registrada");
+		
+		return comandas;
 	}
 	
 	

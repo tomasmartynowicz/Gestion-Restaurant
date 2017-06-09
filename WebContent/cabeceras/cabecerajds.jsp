@@ -33,7 +33,7 @@
             	</li>
 			</ul>	
 			<!-- Cerrar Sesion -->
-			<ul class="nav pull-right">
+			<ul class="nav navbar-nav pull-right">
            		 <li>
            			 <form>
 						<button type="submit" class="btn btn-success navbar-btn">Cerrar sesión</button>

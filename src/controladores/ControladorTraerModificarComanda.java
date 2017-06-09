@@ -1,17 +1,18 @@
 package controladores;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import java.util.List;
-import java.util.ArrayList;
+import datos.Comanda;
+import negocio.ComandaABM;
 
-public class ControladorTraerSalones extends HttpServlet {
-	
+public class ControladorTraerModificarComanda extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
 	 throws ServletException, IOException {
@@ -24,17 +25,23 @@ public class ControladorTraerSalones extends HttpServlet {
 		procesarPeticion(request, response);
 	}
 	
-	
 	private void procesarPeticion(HttpServletRequest request, HttpServletResponse response) 
 			 throws ServletException, IOException {
+			try {	
+				ComandaABM comandaAbm = new ComandaABM();
 				
 				response.setContentType("text/html;charset=UTF-8");
-				List<String> salones = new ArrayList<String>();
-				salones.add("Bar");
-				salones.add("Cafeteria");
-				request.setAttribute("salones", salones);
-				request.getRequestDispatcher("/ajax/ajaxvistasalones.jsp").forward(request, response);
-	} 
-	
+				int idComanda = Integer.parseInt(request.getParameter("idComanda"));
+				
+				Comanda comanda = comandaAbm.traerComanda(idComanda);
+				
+				request.setAttribute("comanda", comanda);
+				request.getRequestDispatcher("/modificarcomandaparticular.jsp").forward(request, response);
+				
+				
+			} catch(Exception e) {
+				e.printStackTrace();
+			}
 
+	} 
 }

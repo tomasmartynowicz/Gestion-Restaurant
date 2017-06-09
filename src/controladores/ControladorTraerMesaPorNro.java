@@ -1,17 +1,17 @@
 package controladores;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import java.util.List;
-import java.util.ArrayList;
+import datos.Mesa;
+import negocio.MesaABM;
 
-public class ControladorTraerSalones extends HttpServlet {
-	
+public class ControladorTraerMesaPorNro extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
 	 throws ServletException, IOException {
@@ -24,17 +24,24 @@ public class ControladorTraerSalones extends HttpServlet {
 		procesarPeticion(request, response);
 	}
 	
-	
 	private void procesarPeticion(HttpServletRequest request, HttpServletResponse response) 
 			 throws ServletException, IOException {
-				
+		try{
 				response.setContentType("text/html;charset=UTF-8");
-				List<String> salones = new ArrayList<String>();
-				salones.add("Bar");
-				salones.add("Cafeteria");
-				request.setAttribute("salones", salones);
-				request.getRequestDispatcher("/ajax/ajaxvistasalones.jsp").forward(request, response);
+				String tipo = request.getParameter("tipo");
+				
+				MesaABM mesaAbm = new MesaABM();
+				
+				int nroMesa = Integer.parseInt(request.getParameter("nroMesa"));
+				
+				Mesa mesa = mesaAbm.traerMesa(nroMesa);
+				
+				request.setAttribute("mesa", mesa);
+				request.setAttribute("tipo", tipo);
+				request.getRequestDispatcher("/ajax/ajaxvistamesa.jsp").forward(request, response);
+				
+		} catch(Exception e){
+			response.sendError(500, "No hay mesas registradas en la base de datos.");
+		}
 	} 
-	
-
 }

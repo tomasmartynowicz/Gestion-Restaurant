@@ -23,9 +23,9 @@
 				 <li class="dropdown">
                 	<a href="#" data-toggle="dropdown" class="dropdown-toggle">Comanda <b class="caret"></b></a>
                 	<ul class="dropdown-menu">
-                    	<li><a href="#">Crear</a></li>
-                    	<li><a href="#">Modificar</a></li>
-                    	<li><a href="#">Eliminar</a></li>
+                    	<li><a href="crearcomanda.jsp">Crear</a></li>
+                    	<li><a href="modificarcomanda.jsp">Modificar</a></li>
+                    	<li><a href="eliminarcomanda.jsp">Eliminar</a></li>
                 	</ul>
             	</li>
 			</ul>

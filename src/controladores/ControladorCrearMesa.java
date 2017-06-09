@@ -37,15 +37,13 @@ public class ControladorCrearMesa extends HttpServlet {
 				abm.crearMesa(cantidadComensales, salon, nroMesa);				
 				
 				String mensaje = "Mesa creada";
-				
 				request.setAttribute("mensaje", mensaje);
-				request.getRequestDispatcher("/ajaxopfinalizada.jsp").forward(request, response);
+				request.getRequestDispatcher("/ajax/ajaxopfinalizada.jsp").forward(request, response);
 				
 			} catch(Exception e) {
 				String mensaje = "Error: la mesa ya existe en la base de datos. Ingrese una nueva mesa";
-				
 				request.setAttribute("mensaje", mensaje);
-				request.getRequestDispatcher("/ajaxopfinalizada.jsp").forward(request, response);
+				request.getRequestDispatcher("/ajax/ajaxopfinalizada.jsp").forward(request, response);
 			}
 				
 				

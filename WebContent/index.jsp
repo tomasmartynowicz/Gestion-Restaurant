@@ -14,7 +14,7 @@
     
 </head>
 <body>
-	<%@ include file="/cabecera.jsp"%>
+	<%@ include file="cabeceras/cabecera.jsp"%>
     
     <div class="container">
       <!-- Example row of columns -->

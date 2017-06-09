@@ -15,44 +15,33 @@
     
     <script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js" ></script>
+
+	<script>
+		$(document).ready(function() {
+			$.ajax({
+				method : "POST",
+				url : "TraerComandas",
+				data : {
+					accion : "",
+					nombre : "Platos y Bebidas"
+				},
+				async : false
+			}).done(function(data) {
+				$("#comandas").html(data)
+			})
+		});
+	</script>
+	
 </head>
 <body>
-	<%@ include file="/cabeceracamarero.jsp" %>
+	<%@ include file="cabeceras/cabeceracamarero.jsp" %>
 	
 	<div class="jumbotron">
-		<div class="container">
+		<div id="response" class="container">
 			<h2>Comandas</h2>
-			<table class="table">
-				<tr>
-					<th>N°</th>
-					<th>Salon</th>
-					<th>Mesa</th>
-					<th>Cliente</th>
-					<th>Hora</th>
-					<th></th>
-					<th></th>
-				</tr>
-				<tr>
-					<td class="vert-align">1</td>
-					<td class="vert-align">Cafeteria</td>
-					<td class="vert-align">3</td>
-					<td class="vert-align">Carlos Rodriguez</td>
-					<td class="vert-align">09:32</td>
-					<td class="vert-align"><button type="submit" class="btn btn-default btn-sm">Platos y Bebidas</button></td>
-					<td class="vert-align"><button type="submit" class="btn btn-danger btn-sm">Anular</button></td>
-				</tr>
-				<tr>
-					<td class="vert-align">2</td>
-					<td class="vert-align">Cafeteria</td>
-					<td class="vert-align">5</td>
-					<td class="vert-align">Carla Martinez</td>
-					<td class="vert-align">09:37</td>
-					<td class="vert-align"><button type="submit" class="btn btn-default btn-sm">Platos y Bebidas</button></td>
-					<td class="vert-align"><button type="submit" class="btn btn-danger btn-sm">Anular</button></td>
-				</tr>
-			</table>
+			<div id="comandas">
+			</div>
 		</div>
 	</div>
-
 </body>
 </html>

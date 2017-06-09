@@ -20,9 +20,13 @@
 	
 	<script src="js/traersalones.js"></script>
 	<script src="js/traermesas.js"></script>
+	
+	<script src="js/habilitarboton.js"></script>
+	
+	<script src="js/eliminarmesa.js"></script>
 </head>
 <body>
-	<%@ include file="/cabecerajds.jsp" %>
+	<%@ include file="cabeceras/cabecerajds.jsp" %>
 	
 	<div class="jumbotron">
 		<div class="container">
@@ -31,28 +35,25 @@
 			<form class="form-horizontal">
 				<!-- Seleccionar Mesa a eliminar -->
 				<div class="form-group">
-					<label class="control-label col-sm-2" for="salon">Salón:</label> 
-					<div class="col-sm-5">
-						<select id="salones" class="form-control" id="salon" onchange="traerMesas()">
-						</select>					
-					</div>
-				</div>
-				<div class="form-group">
 					<label class="control-label col-sm-2" for="mesas">Mesa:</label>
 					<div class="col-sm-1">
-						<select class="form-control" id="mesas">
+						<select class="form-control select" id="mesas" onchange="traerMesa()">
 						</select>
 					</div>
 				</div>
+				<div id="mesa">
+				</div>
 				<div class="form-group">
 					<div class="col-sm-offset-2 col-sm-10">
-						<button type="submit" class="btn btn-default">Eliminar</button>
+						<button id=guardar type="submit" class="btn btn-default" disabled>Eliminar</button>
 					</div>
-				</div>				
+				</div>
+				<input id="tipo" type="hidden" value="eliminar"/>				
 			</form>			
 			
 		</div>
 	</div>
-
+	<div id="respuesta">
+	</div>
 </body>
 </html>

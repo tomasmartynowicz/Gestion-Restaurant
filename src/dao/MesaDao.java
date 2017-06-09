@@ -128,4 +128,19 @@ public class MesaDao {
 		}
 		return lstMesas;
 	}
+	
+	@SuppressWarnings("unchecked")
+	public List<Mesa> traerMesa(){
+		List<Mesa> lstMesas=null;
+		try{
+			iniciaOperacion();
+			lstMesas=(List<Mesa>)session.createQuery("from Mesa m order by m.nroMesa asc").list() ;
+		}
+		finally{
+			session.close();
+		}
+		return lstMesas;
+	}
+	
+	
 }
