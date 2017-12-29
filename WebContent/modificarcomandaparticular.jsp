@@ -36,13 +36,13 @@
 
 
 			<h2>Modificar Comanda</h2>
-			<form class="form-horizontal">
+			<form class="form-horizontal"  method="POST" action="/GestionRestaurant/ModificarComanda">
 			
 				<h4>Comanda</h4>
 				<div class="form-group">
 					<label class="control-label col-sm-2">ID:</label> 
 					<label class="control-label col-sm-1"><%=comanda.getIdComanda()%></label>
-					<input type="hidden" id="idComanda" value="<%=comanda.getIdComanda()%>" />
+					<input type="hidden" id="idComanda" name="idComanda" value="<%=comanda.getIdComanda()%>" />
 				</div>
 				<div class="form-group">
 					<label class="control-label col-sm-2" for="fechaYHora">Fecha y Hora:</label>
@@ -59,7 +59,7 @@
 				<div class="form-group">
 					<label class="control-label col-sm-2" for="nroMesa">N° Mesa:</label>
 					<div class="col-sm-1">
-						<input type="nroMesa" class="form-control" id="nroMesa" value="<%= comanda.getMesa().getNroMesa()%>">
+						<input type="nroMesa" class="form-control" id="nroMesa" name="nroMesa" value="<%= comanda.getMesa().getNroMesa()%>">
 					</div>
 				</div>
 				
@@ -67,15 +67,9 @@
 				<div class="form-group">
 					<label class="control-label col-sm-2" for="dni">DNI:</label>
 					<div class="col-sm-2">
-						<input type="dni" class="form-control" id="dni" value="<%= comanda.getCliente().getDni()%>">
+						<input type="dni" class="form-control" id="dni" name="dni" value="<%= comanda.getCliente().getDni()%>">
 					</div>
-				</div>
-				<div class="form-group">
-					<label class="control-label col-sm-2" for="habitacion">Habitacion:</label>
-					<div class="col-sm-2">
-						<input type="habitacion" class="form-control" id="habitacion" value="<%= comanda.getCliente().getHabitacion()%>">
-					</div>
-				</div>			
+				</div>		
 				<div class="form-group">
 					<div class="col-sm-offset-2 col-sm-10">
 						<button id="guardar" type="submit" class="btn btn-default">Guardar</button>

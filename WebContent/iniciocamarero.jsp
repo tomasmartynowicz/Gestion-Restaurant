@@ -22,7 +22,7 @@
 				method : "POST",
 				url : "TraerComandas",
 				data : {
-					accion : "",
+					accion : "/GestionRestaurant/TraerListaProductos",
 					nombre : "Platos y Bebidas"
 				},
 				async : false

@@ -11,9 +11,13 @@
     
     <!-- Custom styles for this template -->
     <link href="css/personal.css" rel="stylesheet">
-    
+  
+    <script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js" ></script>
+
 </head>
 <body>
+
 	<%@ include file="cabeceras/cabecera.jsp"%>
     
     <div class="container">
@@ -22,13 +26,13 @@
         <div class="col-md-4">
         </div>
         <div class="col-md-4">
-		  <form>
+		  <form method="POST" action="/GestionRestaurant/IniciarSesion">
             <div class="form-group">
               <h2>Acceder</h2>
-              <input type="text" placeholder="Usuario" class="form-control">
+              <input name="usuario" type="text" placeholder="Usuario" class="form-control">
             </div>
             <div class="form-group">
-              <input type="password" placeholder="Contraseña" class="form-control">
+              <input name="contrasenia" type="password" placeholder="Contraseña" class="form-control">
             </div>
             <button type="submit" class="btn btn-success">Iniciar sesión</button>
           </form>

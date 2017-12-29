@@ -5,7 +5,7 @@
 <%@ page import="datos.Comanda" %>
 <%@ page import ="negocio.Funciones" %>
 
-<table class="table">
+<!-- <table class="table">
 <tr>
 	<th>N°</th>
 	<th>Salon</th>
@@ -17,27 +17,44 @@
 </tr>
 
 
-<%
+
+	
+
+
+</table> -->
+
+<div class="container">
+	<div class="row divtable divtr">
+		<div class="col-sm-2 divth">N°</div>
+		<div class="col-sm-2 divth">Mesa</div>
+		<div class="col-sm-2 divth">Salón</div>
+		<div class="col-sm-2 divth">Fecha y Hora</div>
+		<div class="col-sm-2 divth"></div>
+	</div>
+	
+	<%
 	List<Comanda> comandas = (List<Comanda>) request.getAttribute("comandas");
 	String accion = (String) request.getAttribute("accion");
 	String nombre = (String) request.getAttribute("nombre");
 	String boton = (String) request.getAttribute("boton");
 	
 	for (Comanda comanda : comandas) {
-%>
+	%>
+	<form method="POST" action="<%= accion%>">
+	<div class="row divtable divtr">
+		<div class="col-sm-2"><%=comanda.getIdComanda()%><input
+				type="hidden" name="idComanda" value="<%=comanda.getIdComanda()%>" /></div>
+		<div class="col-sm-2"><%=comanda.getMesa().getNroMesa()%></div>
+		<div class="col-sm-2"><%=comanda.getMesa().getSalon()%></div>
+		<div class="col-sm-2"><%=Funciones.traerFechaCortaHora(comanda.getFechaYHora())%></div>
+		<div class="col-sm-2">
+			<button id="<%= nombre %>" type="submit"
+					class="btn btn-default btn-sm <%= boton%>"><%= nombre %></button>
+		</div>
 
-	<tr>
-		<form method="POST" action="<%= accion%>">
-			<td class="vert-align"><%=comanda.getIdComanda()%><input
-				type="hidden" name="idComanda" value="<%=comanda.getIdComanda()%>" /></td>
-			<td class="vert-align"><%=comanda.getMesa().getSalon()%></td>
-			<td class="vert-align"><%=comanda.getMesa().getNroMesa()%></td>
-			<td class="vert-align"><%=Funciones.traerFechaCortaHora(comanda.getFechaYHora())%>
-			<td class="vert-align"><button id="<%= nombre %>" type="submit"
-					class="btn btn-default btn-sm <%= boton%>"><%= nombre %></button></td>
-		</form>
-	</tr>
+	</div>
+	</form>
+
 
 <% } %>
-
-</table>
+</div>

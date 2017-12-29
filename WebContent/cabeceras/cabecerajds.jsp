@@ -20,7 +20,7 @@
 			
 			<ul class="nav navbar-nav">
 				<!-- Home -->
-				<li><a href="iniciojds.jsp">Layout</a></li>
+				<li><a href="layout.jsp">Layout</a></li>
 				
 				<!-- Dropdown de Mesa -->
 				<li class="dropdown">
@@ -35,7 +35,7 @@
 			<!-- Cerrar Sesion -->
 			<ul class="nav navbar-nav pull-right">
            		 <li>
-           			 <form>
+           			 <form method="POST" action="/GestionRestaurant/CerrarSesion">
 						<button type="submit" class="btn btn-success navbar-btn">Cerrar sesión</button>
 					</form>
 				</li>

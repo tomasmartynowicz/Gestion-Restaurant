@@ -1,73 +1,193 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
-	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
-	http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
-	id="WebApp_ID" version="3.1">
-	<display-name>GestionRestaurant</display-name>
-	<welcome-file-list>
-		<welcome-file>index.html</welcome-file>
-		<welcome-file>index.htm</welcome-file>
-		<welcome-file>index.jsp</welcome-file>
-		<welcome-file>default.html</welcome-file>
-		<welcome-file>default.htm</welcome-file>
-		<welcome-file>default.jsp</welcome-file>
-	</welcome-file-list>
-
-	<servlet>
-		<servlet-name>ControladorTraerSalones</servlet-name>
-		<servlet-class>controladores.ControladorTraerSalones</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>ControladorTraerSalones</servlet-name>
-		<url-pattern>/TraerSalones</url-pattern>
-	</servlet-mapping>
-	
-	<servlet>
-		<servlet-name>ControladorTraerMesas</servlet-name>
-		<servlet-class>controladores.ControladorTraerMesas</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>ControladorTraerMesas</servlet-name>
-		<url-pattern>/TraerMesas</url-pattern>
-	</servlet-mapping>
-	
-	<servlet>
-		<servlet-name>ControladorTraerMesaPorNro</servlet-name>
-		<servlet-class>controladores.ControladorTraerMesaPorNro</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>ControladorTraerMesaPorNro</servlet-name>
-		<url-pattern>/TraerMesaPorNro</url-pattern>
-	</servlet-mapping>
-
-	<servlet>
-		<servlet-name>ControladorCrearMesa</servlet-name>
-		<servlet-class>controladores.ControladorCrearMesa</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>ControladorCrearMesa</servlet-name>
-		<url-pattern>/CrearMesa</url-pattern>
-	</servlet-mapping>
-	
-	<servlet>
-		<servlet-name>ControladorTraerComandas</servlet-name>
-		<servlet-class>controladores.ControladorTraerComandas</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>ControladorTraerComandas</servlet-name>
-		<url-pattern>/TraerComandas</url-pattern>
-	</servlet-mapping>
-	
-	<servlet>
-		<servlet-name>ControladorTraerModificarComanda</servlet-name>
-		<servlet-class>controladores.ControladorTraerModificarComanda</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>ControladorTraerModificarComanda</servlet-name>
-		<url-pattern>/TraerModificarComanda</url-pattern>
-	</servlet-mapping>
-	
-	
-	
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>GestionRestaurant</display-name>
+  <welcome-file-list>
+	<welcome-file>VerificarSesion</welcome-file>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <servlet-name>ControladorTraerSalones</servlet-name>
+    <servlet-class>controladores.ControladorTraerSalones</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ControladorTraerSalones</servlet-name>
+    <url-pattern>/TraerSalones</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>ControladorTraerMesas</servlet-name>
+    <servlet-class>controladores.ControladorTraerMesas</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ControladorTraerMesas</servlet-name>
+    <url-pattern>/TraerMesas</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>ControladorTraerMesaPorNro</servlet-name>
+    <servlet-class>controladores.ControladorTraerMesaPorNro</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ControladorTraerMesaPorNro</servlet-name>
+    <url-pattern>/TraerMesaPorNro</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>ControladorCrearMesa</servlet-name>
+    <servlet-class>controladores.ControladorCrearMesa</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ControladorCrearMesa</servlet-name>
+    <url-pattern>/CrearMesa</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>ControladorTraerComandas</servlet-name>
+    <servlet-class>controladores.ControladorTraerComandas</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ControladorTraerComandas</servlet-name>
+    <url-pattern>/TraerComandas</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>ControladorTraerModificarComanda</servlet-name>
+    <servlet-class>controladores.ControladorTraerModificarComanda</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ControladorTraerModificarComanda</servlet-name>
+    <url-pattern>/TraerModificarComanda</url-pattern>
+  </servlet-mapping>
+  
+  <!-- Nuevos Mapeos -->
+  <servlet>
+    <servlet-name>ControladorEliminarMesa</servlet-name>
+    <servlet-class>controladores.ControladorEliminarMesa</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ControladorEliminarMesa</servlet-name>
+    <url-pattern>/EliminarMesa</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>ControladorModificarMesa</servlet-name>
+    <servlet-class>controladores.ControladorModificarMesa</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ControladorModificarMesa</servlet-name>
+    <url-pattern>/ModificarMesa</url-pattern>
+  </servlet-mapping>
+   <servlet>
+    <servlet-name>ControladorCrearComanda</servlet-name>
+    <servlet-class>controladores.ControladorCrearComanda</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ControladorCrearComanda</servlet-name>
+    <url-pattern>/CrearComanda</url-pattern>
+  </servlet-mapping>
+   <servlet>
+    <servlet-name>ControladorTraerMesasLayout</servlet-name>
+    <servlet-class>controladores.ControladorTraerMesasLayout</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ControladorTraerMesasLayout</servlet-name>
+    <url-pattern>/TraerMesasLayout</url-pattern>
+  </servlet-mapping>
+ <servlet>
+    <servlet-name>ControladorModificarComanda</servlet-name>
+    <servlet-class>controladores.ControladorModificarComanda</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ControladorModificarComanda</servlet-name>
+    <url-pattern>/ModificarComanda</url-pattern>
+  </servlet-mapping>
+ <servlet>
+    <servlet-name>ControladorEliminarComanda</servlet-name>
+    <servlet-class>controladores.ControladorEliminarComanda</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ControladorEliminarComanda</servlet-name>
+    <url-pattern>/EliminarComanda</url-pattern>
+  </servlet-mapping>
+  
+  <!-- mapeo para cocinero nuevo-->
+  <servlet>
+    <servlet-name>ControladorTraerComandasPorFecha</servlet-name>
+    <servlet-class>controladores.ControladorTraerComandasPorFecha</servlet-class>
+   </servlet>
+   <servlet-mapping>
+   <servlet-name>ControladorTraerComandasPorFecha</servlet-name>
+   <url-pattern>/TraerComandaFechaCocinero</url-pattern>
+   </servlet-mapping>
+   
+    <!-- mapeo para productos de comanda-->
+   <servlet>
+    <servlet-name>ControladorTraerListaProductosPorRubro</servlet-name>
+    <servlet-class>controladores.ControladorTraerListaProductosPorRubro</servlet-class>
+   </servlet>
+   <servlet-mapping>
+   <servlet-name>ControladorTraerListaProductosPorRubro</servlet-name>
+   <url-pattern>/TraerListaProductosPorRubro</url-pattern>
+   </servlet-mapping>
+   <servlet>
+    <servlet-name>ControladorTraerListaProductos</servlet-name>
+    <servlet-class>controladores.ControladorTraerListaProductos</servlet-class>
+   </servlet>
+   <servlet-mapping>
+   <servlet-name>ControladorTraerListaProductos</servlet-name>
+   <url-pattern>/TraerListaProductos</url-pattern>
+   </servlet-mapping>
+   <servlet>
+    <servlet-name>ControladorAgregarProducto</servlet-name>
+    <servlet-class>controladores.ControladorAgregarProducto</servlet-class>
+   </servlet>
+   <servlet-mapping>
+   <servlet-name>ControladorAgregarProducto</servlet-name>
+   <url-pattern>/AgregarProducto</url-pattern>
+   </servlet-mapping>
+   <servlet>
+    <servlet-name>ControladorEliminarProducto</servlet-name>
+    <servlet-class>controladores.ControladorEliminarProducto</servlet-class>
+   </servlet>
+   <servlet-mapping>
+   <servlet-name>ControladorEliminarProducto</servlet-name>
+   <url-pattern>/EliminarProducto</url-pattern>
+   </servlet-mapping>
+   <servlet>
+    <servlet-name>ControladorGenerarPreticket</servlet-name>
+    <servlet-class>controladores.ControladorGenerarPreticket</servlet-class>
+   </servlet>
+   <servlet-mapping>
+   <servlet-name>ControladorGenerarPreticket</servlet-name>
+   <url-pattern>/GenerarPreticket</url-pattern>
+   </servlet-mapping>
+   
+   <!--mapeos de sesion -->
+   
+   <servlet>
+    <servlet-name>ControladorVerificarSesion</servlet-name>
+    <servlet-class>controladores.ControladorVerificarSesion</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ControladorVerificarSesion</servlet-name>
+    <url-pattern>/VerificarSesion</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+    <servlet-name>ControladorCerrarSesion</servlet-name>
+    <servlet-class>controladores.ControladorCerrarSesion</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ControladorCerrarSesion</servlet-name>
+    <url-pattern>/CerrarSesion</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>ControladorIniciarSesion</servlet-name>
+    <servlet-class>controladores.ControladorIniciarSesion</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ControladorIniciarSesion</servlet-name>
+    <url-pattern>/IniciarSesion</url-pattern>
+  </servlet-mapping>
+    
 </web-app>

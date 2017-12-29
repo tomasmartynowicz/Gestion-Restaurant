@@ -1,0 +1,46 @@
+#layout{
+  	border-width:0,5em;
+  	border-style:solid;
+ 	border-color:black;
+ 	float: left;
+ 	border-radius: 20px;
+	margin: 20px;
+	padding: 20px;
+	min-width: 760px;
+	max-width: 760px;
+	background-image: url("../imagenes/piso.png");
+}
+
+#imagen{
+	
+}
+
+.mesa{
+	height: 100px;
+	width: 100px;
+	background-color: black;
+	background-height: 100px;
+	background-width: 100px;
+	margin: 20px;
+	border-radius: 10%;
+	float: left;
+	background-image: url("../imagenes/piso2.png");
+	border-width:5px;
+  	border-style:solid;
+ 	border-color:black;
+}
+
+.mesa .nummesa{
+	color: white;
+	text-align: center;
+	font-size: 30px;
+	font-weight: bold;
+}
+
+.mesa .desc{
+	color: white;
+	text-align: center;
+	font-size: 13px;
+	font-weight: bold;
+	margin: 0px;
+}

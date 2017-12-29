@@ -7,8 +7,8 @@ $(document).ready(function() {
 			url : "CrearComanda",
 			data : {
 				idMesa : idMesa,
-				dni : dni,
-			},
+				dni : dni,		
+			},	
 			async : false
 		}).done(function(data) {
 			$("#respuesta").html(data);

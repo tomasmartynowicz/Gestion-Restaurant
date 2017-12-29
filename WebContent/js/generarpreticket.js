@@ -1,19 +1,17 @@
 $(document).ready(function() {
 	$('#guardar').click(function() {
-		var idComanda = $('#idComanda').val();
-		var nroMesa = $('#nroMesa').val();
-		var dni = $('#dni').val();
+		var nroMesa = $('#mesas').val();
+		var dni = $('#dni').val()
 		$.ajax({
 			method : "POST",
-			url : "ModificarComanda",
+			url : "GenerarPreticket",
 			data : {
-				idComanda : idComanda,
 				nroMesa : nroMesa,
 				dni : dni
 			},
 			async : false
 		}).done(function(data) {
-			$("#respuesta").html(data);
+			$("#preticket").html(data);
 		})
 	});
 });
