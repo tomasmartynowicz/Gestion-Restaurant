@@ -45,8 +45,14 @@ public class MesaABM {
 		int nroMesaParaUnion=mesa1.getNroMesa();
 		Mesa bdd1=dao.traerMesa(mesa1.getNroMesa());
 		Mesa bdd2=dao.traerMesa(mesa2.getNroMesa());
-		mesa1.setUnion(nroMesaParaUnion);
-		mesa2.setUnion(nroMesaParaUnion);
+		int verificacion=bdd1.getUnion();
+		if(verificacion!=0){ //si ya una mesa esta unida y quiero unirla a otra, que le ponga la misma union 
+			mesa2.setUnion(verificacion);
+		}
+		else{
+			mesa1.setUnion(nroMesaParaUnion);
+			mesa2.setUnion(nroMesaParaUnion);
+		}
 		bdd1=mesa1;
 		bdd2=mesa2;
 		dao.actualizar(bdd1);

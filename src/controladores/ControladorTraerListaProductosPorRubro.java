@@ -1,17 +1,21 @@
 package controladores;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import java.util.List;
-import java.util.ArrayList;
+import dao.ProductoDao;
+import dao.RubroDao;
+import datos.Comanda;
+import datos.Producto;
+import datos.Rubro;
+import negocio.ComandaABM;
 
-public class ControladorTraerSalones extends HttpServlet {
-	
+public class ControladorTraerListaProductosPorRubro extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
 	 throws ServletException, IOException {
@@ -24,18 +28,23 @@ public class ControladorTraerSalones extends HttpServlet {
 		procesarPeticion(request, response);
 	}
 	
-	
 	private void procesarPeticion(HttpServletRequest request, HttpServletResponse response) 
 			 throws ServletException, IOException {
-				
+		try {
 				response.setContentType("text/html;charset=UTF-8");
-				List<String> salones = new ArrayList<String>();
-				salones.add("1");
-				salones.add("2");
-				salones.add("3");
-				request.setAttribute("salones", salones);
-				request.getRequestDispatcher("/ajax/ajaxvistasalones.jsp").forward(request, response);
+				int idRubro = Integer.parseInt(request.getParameter("idRubro"));
+				
+				ProductoDao productoDao = new ProductoDao();
+				
+				List<Producto> lstProducto = productoDao.traerProductoPorRubro(idRubro); 
+				
+				request.setAttribute("lstProducto" , lstProducto);
+				
+				request.getRequestDispatcher("/ajax/ajaxvistaproductos.jsp").forward(request, response);
+				
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+				
 	} 
-	
-
 }

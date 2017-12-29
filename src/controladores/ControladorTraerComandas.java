@@ -8,6 +8,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import negocio.ComandaABM;
 import negocio.MesaABM;
@@ -34,12 +35,16 @@ public class ControladorTraerComandas extends HttpServlet {
 			 throws ServletException, IOException {
 		try{
 			response.setContentType("text/html;charset=UTF-8");
+			
+			HttpSession session = request.getSession();
+			Empleado empleado = (Empleado) session.getAttribute("empleado");
+			
 			String accion = (String) request.getParameter("accion");
 			String nombre = (String) request.getParameter("nombre");
 			String boton = (String) request.getParameter("boton");
 			
 			ComandaABM comandaAbm = new ComandaABM();
-			List<Comanda> comandas = comandaAbm.traerComandaPorEmpleado(1);
+			List<Comanda> comandas = comandaAbm.traerComandaPorEmpleado(empleado.getIdEmpleado());
 			
 			request.setAttribute("comandas", comandas);
 			request.setAttribute("accion", accion);

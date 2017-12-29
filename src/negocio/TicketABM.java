@@ -1,5 +1,9 @@
 package negocio;
 
+import java.util.ArrayList;
+import java.util.GregorianCalendar;
+import java.util.List;
+
 import dao.TicketDao;
 import datos.Cliente;
 import datos.Comanda;
@@ -17,15 +21,22 @@ public class TicketABM {
 		MesaABM mesaabm = new MesaABM();
 		ticket.setCliente(c);
 		ticket.setMesa(mesaabm.traerMesaYDetalle(m.getNroMesa()));
+		ticket.setFechaYHora(new GregorianCalendar());
+		List<PrecioProductoLista> pplborrar= new ArrayList<PrecioProductoLista>();
 		for(Comanda co: ticket.getMesa().getLstComanda()){
 			for(Producto p: co.getLstProducto()){
 				for(PrecioProductoLista ppl: p.getLstPrecioProductoLista()){
+					
 					if(ppl.getListaPrecio().getTipoCliente().getIdTipoCliente() != c.getTipoCliente().getIdTipoCliente())
-						p.getLstPrecioProductoLista().remove(ppl);
+						pplborrar.add(ppl);
 					else total+=ppl.getPrecio();
+				}
+				for(PrecioProductoLista ppl: pplborrar){
+					p.getLstPrecioProductoLista().remove(ppl);
 				}
 			}
 		}
+		
 		return ticket;
 	}
 }

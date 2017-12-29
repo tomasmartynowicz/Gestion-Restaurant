@@ -6,6 +6,7 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import java.util.List;
 import datos.Componente;
 import datos.Producto;
 
@@ -64,13 +65,13 @@ public class ProductoDao {
 			session.close();
 		}
 	}
+
 	
 	public Producto traerProducto(long idProducto) throws HibernateException {
 		Producto objeto = null;
 		try {
 			iniciaOperacion();
 			objeto = (Producto) session.get(Producto.class, idProducto);
-			Hibernate.initialize(objeto.getLstComponente());
 		} finally {
 			session.close();
 		}
@@ -89,6 +90,32 @@ public class ProductoDao {
 			Hibernate.initialize(objeto.getRubro());
 			Hibernate.initialize(objeto.getLstSubrubro());
 			Hibernate.initialize(objeto.getLstPrecioProductoLista());
+		} finally {
+			session.close();
+		}
+		return objeto;
+	}
+	
+	@SuppressWarnings("unchecked")
+	public List<Producto> traerProducto() throws HibernateException {
+		List<Producto> objeto = null;
+		try {
+			iniciaOperacion();
+			String hql = "from Producto p order by p.nombre asc";
+			objeto = (List<Producto>) session.createQuery(hql).list(); 
+		} finally {
+			session.close();
+		}
+		return objeto;
+	}
+	
+	@SuppressWarnings("unchecked")
+	public List<Producto> traerProductoPorRubro(long idRubro) throws HibernateException {
+		List<Producto> objeto = null;
+		try {
+			iniciaOperacion();
+			String hql = "from Producto p where p.rubro=" + idRubro + " order by p.nombre asc";
+			objeto = (List<Producto>) session.createQuery(hql).list(); 
 		} finally {
 			session.close();
 		}

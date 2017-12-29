@@ -1,10 +1,15 @@
 <?xml version = "1.0" encoding = "UTF-8"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
 <hibernate-mapping>
-	<class name="datos.TipoCliente" table="tipocliente">
-		<id column="idTipoCliente" name="idTipoCliente">
+	<class name="datos.Categoria" table="categoria">
+		<id column="idCategoria" name="idCategoria">
 			<generator class="identity" />
 		</id>
 		<property column="nombre" name="nombre" type="string"/>
+		<property column="descripcion" name="descripcion" type="string"/>
+		<set name="lstPermiso" table="categoriaxpermiso" outer-join="true">
+			<key column="idCategoria"/>
+			<many-to-many column="idPermiso" class="datos.Permiso"/>
+		</set>
 	</class>
 </hibernate-mapping>

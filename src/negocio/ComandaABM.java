@@ -74,6 +74,19 @@ public class ComandaABM {
 		return comandas;
 	}
 	
+	public Comanda traerComandaYProductos(long idComanda) throws Exception{
+		Comanda comanda = dao.traerComandaYProductos(idComanda);
+		
+		if(comanda == null) throw new Exception("ERROR, la mesa que desea eliminar no existe");
+		
+		return comanda;
+	}
+	
+	public List<Comanda> traerComandaPorFecha(GregorianCalendar fechaYHora)throws Exception{
+		List<Comanda> comandas=dao.traerComandaPorFecha(fechaYHora);
+		if(comandas==null) throw new Exception("ERROR, no existe comandas en la fecha");
+		return comandas;
+	}
 	
 	
 }

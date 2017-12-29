@@ -7,6 +7,8 @@ public class Usuario {
 	private String nombreUsuario;
 	private String clave;
 	private Empleado empleado;
+	private Categoria categoria;
+	private boolean baja;
 	
 	
 	
@@ -14,13 +16,24 @@ public class Usuario {
 	}
 
 
-	public Usuario(String nombreUsuario, String clave, Empleado empleado) {
+	public Usuario(String nombreUsuario, String clave, Empleado empleado, Categoria categoria) {
 		super();
 		this.nombreUsuario = nombreUsuario;
 		this.clave = clave;
 		this.setEmpleado(empleado);
+		this.setCategoria(categoria);
 	}
 
+
+
+	public Categoria getCategoria() {
+		return categoria;
+	}
+
+
+	public void setCategoria(Categoria categoria) {
+		this.categoria = categoria;
+	}
 
 
 	public long getIdUsuario() {
@@ -65,6 +78,16 @@ public class Usuario {
 
 	public void setEmpleado(Empleado empleado) {
 		this.empleado = empleado;
+	}
+
+
+	public boolean isBaja() {
+		return baja;
+	}
+
+
+	public void setBaja(boolean baja) {
+		this.baja = baja;
 	}
 
 

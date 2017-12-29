@@ -1,6 +1,8 @@
 package dao;
 
 
+import java.util.List;
+
 import org.hibernate.Hibernate;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -73,5 +75,20 @@ public class SubrubroDao {
 		}
 		return objeto;
 	}
+	
+	@SuppressWarnings("unchecked")
+	public List<Subrubro> traerSubrubro() throws HibernateException {
+		List<Subrubro> objeto = null;
+		try {
+			iniciaOperacion();
+			String hql = "from Subrubro s order by nombre asc";
+			objeto = (List<Subrubro>) session.createQuery(hql).list();
+		} finally {
+			session.close();
+		}
+		return objeto;
+	}
+	
+	
 
 }
